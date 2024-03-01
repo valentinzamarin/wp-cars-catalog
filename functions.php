@@ -37,12 +37,7 @@ if ( ! function_exists( 'cars_catalog_autoload' ) ) {
     spl_autoload_register( 'cars_catalog_autoload' );
 }
 
-function setup_theme(): Setup {
-    return Setup::instance();
-}
-
-setup_theme()->init();
-
+Setup::instance()->init();
 Type::instance()->init();
 Taxonomy::instance()->init();
 Meta::instance()->init();
