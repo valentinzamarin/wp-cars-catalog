@@ -1,5 +1,5 @@
 <form id="filter" class="mb-5">
-    <div class="row mb-2">
+    <div class="d-flex aligncenter row mb-2">
         <div class="col-md-2">
             <?php get_template_part( 'template-parts/partials/filter', 'select', [ 'taxonomy' => 'car_brand' ]); ?>
         </div>
@@ -11,6 +11,9 @@
         </div>
         <div class="col-md-2">
             <?php get_template_part( 'template-parts/partials/filter', 'color'); ?>
+        </div>
+        <div class="col-md-4">
+            <?php get_template_part( 'template-parts/partials/filter', 'price'); ?>
         </div>
     </div>
     <hr class="mb-2">
