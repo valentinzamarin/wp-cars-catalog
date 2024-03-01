@@ -22,7 +22,6 @@ class Type extends Singleton {
             'supports' => [
                 'title',
                 'thumbnail',
-                'custom-fields'
             ],
         ];
         register_post_type('cars', $args);

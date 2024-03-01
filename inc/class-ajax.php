@@ -79,6 +79,31 @@ class Ajax extends Singleton {
             $args['paged'] = $page;
         endif;
 
+        $price_from = intval( $_POST['price_from'] );
+        $price_to   = intval( $_POST['price_to'] );
+
+        if ($price_from) :
+            $args['meta_query'][] = [
+                [
+                    'key' => 'car_price',
+                    'value' => $price_from,
+                    'type' => 'NUMERIC',
+                    'compare' => '>='
+                ],
+            ];
+        endif;
+
+        if ($price_to) :
+            $args['meta_query'][] = [
+                [
+                    'key' => 'car_price',
+                    'value' => $price_to,
+                    'type' => 'NUMERIC',
+                    'compare' => '<='
+                ],
+            ];
+        endif;
+
         $posts = '';
         ob_start();
 

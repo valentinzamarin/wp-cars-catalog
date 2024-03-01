@@ -5,6 +5,12 @@ const filterFormData = ( form, page = 1 ) => {
         year = $this.car_year,
         colors = $this.colors;
 
+    let priceFrom = $this.price_from,
+        priceTo   = $this.price_to;
+
+    console.log( priceFrom.value )
+
+
     const checkedColors = Array.from(colors).filter(color => color.checked);
 
     let arrayColors = [];
@@ -19,6 +25,8 @@ const filterFormData = ( form, page = 1 ) => {
     formData.append("type", type.value);
     formData.append("year", year.value);
     formData.append('colors', JSON.stringify(arrayColors))
+    formData.append('price_from', priceFrom.value )
+    formData.append('price_to', priceTo.value )
     formData.append('page', page)
 
     return formData;

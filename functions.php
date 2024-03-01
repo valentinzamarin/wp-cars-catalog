@@ -3,9 +3,9 @@
 use CarsCatalog\Setup;
 use CarsCatalog\Type;
 use CarsCatalog\Taxonomy;
+use CarsCatalog\Meta;
 use CarsCatalog\Shortcode;
 use CarsCatalog\Ajax;
-use CarsCatalog\Query;
 
 if ( ! function_exists( 'cars_catalog_autoload' ) ) {
 
@@ -45,27 +45,7 @@ setup_theme()->init();
 
 Type::instance()->init();
 Taxonomy::instance()->init();
+Meta::instance()->init();
 Shortcode::instance()->init();
 Ajax::instance()->init();
 
-
-function showCategories( int $id, string $taxonomy ) : string {
-    $categories = get_the_terms(get_the_ID(), $taxonomy );
-    if ($categories && !is_wp_error($categories)) {
-        foreach ($categories as $category) {
-            return $category->name;
-        }
-    }
-    return false;
-}
-
-function showColors( int $id ) {
-    $colors_term = get_the_terms(get_the_ID(), 'car_color' );
-    echo '<div class="colors">';
-    if ($colors_term && !is_wp_error($colors_term)) {
-        foreach ($colors_term as $color) {
-            echo '<div class="colors__btn" style="background-color: ' . $color->name . ';""></div>';
-        }
-    }
-    echo '</div>';
-}

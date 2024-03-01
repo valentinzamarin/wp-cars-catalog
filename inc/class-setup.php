@@ -2,6 +2,8 @@
 
 namespace CarsCatalog;
 
+require_once __DIR__ . '/utilitis/helpers.php';
+
 class Setup extends Singleton {
 
     public function init() {
