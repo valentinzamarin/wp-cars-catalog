@@ -1,0 +1,37 @@
+/*
+Theme Name: Cars Catalog
+Theme URI: https://github.com/valentinzamarin/wp-cars-catalog
+Author: valentinzamarin
+Author URI: https://github.com/valentinzamarin
+Description: Catalog with Shortcode and Filter
+Requires at least: 6.4
+Tested up to: 6.4
+Requires PHP: 8.0
+Version: 1.0
+*/
+.colors{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+.colors__btn {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #9E9E9E;
+}
+.colors__btn input{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+.colors__btn input:checked{
+    opacity: 1;
+    border-radius: 50%;
+}
