@@ -18,4 +18,5 @@
     </div>
     <hr class="mb-2">
     <input type="submit" class="btn btn-primary" value="Filter">
+    <button id="btn-reset" type="button" class="btn btn-danger">Reset</button>
 </form>

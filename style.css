@@ -45,3 +45,17 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
+
+input[type="checkbox"]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-appearance: none;
+}
+input[type="checkbox"]:checked:before{
+    content: "\2713";
+    color: #c6c6c6;
+    font-size: 22px;
+    font-weight: bold;
+    pointer-events: none;
+}

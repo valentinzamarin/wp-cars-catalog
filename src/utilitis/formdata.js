@@ -8,9 +8,6 @@ const filterFormData = ( form, page = 1 ) => {
     let priceFrom = $this.price_from,
         priceTo   = $this.price_to;
 
-    console.log( priceFrom.value )
-
-
     const checkedColors = Array.from(colors).filter(color => color.checked);
 
     let arrayColors = [];
