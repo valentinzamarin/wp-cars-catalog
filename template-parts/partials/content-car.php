@@ -1,6 +1,7 @@
 <?php
     $id    = get_the_ID();
     $thumb = get_the_post_thumbnail_url($id);
+    use CarsCatalog\classes\Helpers;
 ?>
 <div class="block col-md-3 text-decoration-none">
     <div class="card mb-4 box-shadow">
@@ -10,24 +11,18 @@
             <hr>
             <p class="card-text text-muted">
                 Brand:
-                <?php
-                echo showCategories( get_the_ID(), 'car_brand' );
-                ?>
+                <?php echo Helpers::showCategories( get_the_ID(), 'car_brand' ); ?>
             </p>
             <p class="card-text text-muted">
                 Type:
-                <?php
-                echo showCategories( get_the_ID(), 'car_type' );
-                ?>
+                <?php echo Helpers::showCategories( get_the_ID(), 'car_type' ); ?>
             </p>
             <p class="card-text text-muted">
                 Year:
-                <?php
-                echo showCategories( get_the_ID(), 'car_year' );
-                ?>
+                <?php echo Helpers::showCategories( get_the_ID(), 'car_year' ); ?>
             </p>
             <p class="card-text text-muted">
-                <?php showColors( get_the_ID() ); ?>
+                <?php Helpers::showColors( get_the_ID() ); ?>
             </p>
             <hr>
             <p>

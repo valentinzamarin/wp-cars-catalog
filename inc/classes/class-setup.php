@@ -1,10 +1,10 @@
 <?php
 
-namespace CarsCatalog;
+namespace CarsCatalog\classes;
 
-require_once __DIR__ . '/utilitis/helpers.php';
+use CarsCatalog\abstracts\Singleton;
 
-class Setup extends Singleton {
+class Setup extends Singleton{
 
     public function init() {
         add_action( 'after_setup_theme', [ $this, 'cars_theme_setup' ] );

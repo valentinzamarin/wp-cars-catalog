@@ -1,8 +1,10 @@
 <?php
 
-namespace CarsCatalog;
 
-require_once __DIR__ . '/query.php';
+namespace CarsCatalog\classes;
+
+use CarsCatalog\abstracts\Singleton;
+use CarsCatalog\traits\Query;
 
 class Ajax extends Singleton {
 

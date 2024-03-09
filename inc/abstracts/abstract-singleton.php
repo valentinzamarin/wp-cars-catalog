@@ -1,10 +1,9 @@
 <?php
 
-namespace CarsCatalog;
-
+namespace CarsCatalog\abstracts;
 abstract class Singleton {
 
-    public static function instance(): \CarsCatalog\Singleton {
+    public static function instance() {
         static $instances = array();
 
         $class = get_called_class();
