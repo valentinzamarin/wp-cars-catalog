@@ -1,11 +1,11 @@
 <?php
 
-use CarsCatalog\Setup;
-use CarsCatalog\Type;
-use CarsCatalog\Taxonomy;
-use CarsCatalog\Meta;
-use CarsCatalog\Shortcode;
-use CarsCatalog\Ajax;
+use CarsCatalog\classes\Setup;
+use CarsCatalog\classes\Shortcode;
+use CarsCatalog\classes\Type;
+use CarsCatalog\classes\Taxonomy;
+use CarsCatalog\classes\Meta;
+use CarsCatalog\classes\Ajax;
 
 if ( ! function_exists( 'cars_catalog_autoload' ) ) {
 
@@ -23,8 +23,13 @@ if ( ! function_exists( 'cars_catalog_autoload' ) ) {
         if ( 1 > count( $parts ) ) {
             return;
         }
-
-        $parts[ count( $parts ) - 1 ] = 'class-' . $parts[ count( $parts ) - 1 ] . '.php';
+        if (in_array('classes', $parts)) :
+            $parts[ count( $parts ) - 1 ] = 'class-' . $parts[ count( $parts ) - 1 ] . '.php';
+        elseif ( in_array('abstracts', $parts ) ) :
+            $parts[ count( $parts ) - 1 ] = 'abstract-' . $parts[ count( $parts ) - 1 ] . '.php';
+        elseif ( in_array('traits', $parts ) ) :
+            $parts[ count( $parts ) - 1 ] = 'trait-' . $parts[ count( $parts ) - 1 ] . '.php';
+        endif;
 
         $filename = get_template_directory() . DIRECTORY_SEPARATOR . 'inc' . DIRECTORY_SEPARATOR . implode( DIRECTORY_SEPARATOR, $parts );
 
@@ -38,9 +43,10 @@ if ( ! function_exists( 'cars_catalog_autoload' ) ) {
 }
 
 Setup::instance()->init();
+Shortcode::instance()->init();
 Type::instance()->init();
 Taxonomy::instance()->init();
 Meta::instance()->init();
-Shortcode::instance()->init();
 Ajax::instance()->init();
+
 

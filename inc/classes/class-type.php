@@ -1,7 +1,8 @@
 <?php
 
-namespace CarsCatalog;
+namespace CarsCatalog\classes;
 
+use CarsCatalog\abstracts\Singleton;
 class Type extends Singleton {
 
     public function init() {

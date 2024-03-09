@@ -1,7 +1,8 @@
 <?php
 
-namespace CarsCatalog;
+namespace CarsCatalog\classes;
 
+use CarsCatalog\abstracts\Singleton;
 class Meta extends Singleton {
     public function init() {
         add_action( 'add_meta_boxes', [ $this, 'cars_post_meta' ] );

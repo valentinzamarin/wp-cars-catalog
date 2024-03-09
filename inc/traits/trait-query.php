@@ -1,5 +1,6 @@
 <?php
-namespace CarsCatalog;
+
+namespace CarsCatalog\traits;
 trait Query{
     public function cars_query( array $args ) {
 
